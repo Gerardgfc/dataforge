@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predicción de Fraude</title>
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <nav class="navbar">
+        <a href="#">Soporte</a>
+        <a href="#">Contactos</a>
+    </nav>
+
+    <div class="logo-title">
+        <img src="../static/logo.png" alt="Logo Shield Bank" class="logo">
+        <h2>Data Forge</h2>
+    </div>
+
+    <div class="user-greeting">
+        <div class="greeting-container">
+            <img src="../static/ico_us.png" alt="Usuario" class="user-icon"> 
+            <span id="greeting"></span>
+        </div>
+        <button id="logout-button" onclick="logout()">Cerrar sesión</button>
+    </div>
+    
+    
+    
+
+    <div class="circle circle-large"></div>
+    <div class="circle circle-purple"></div>
+    <div class="circle circle-blue"></div>
+    <div class="circle circle-pink"></div>
+
+    <div class="body"> 
+        <h1>Subir archivo para predicción de fraude</h1>
+        <form id="uploadForm" enctype="multipart/form-data">
+            <label class="file-label" for="file-input">Seleccionar archivo</label>
+            <input type="file" id="file-input" name="file" required onchange="updateFileName()">
+            <div class="selected-file" id="selected-file">Archivos seleccionados: Ninguno</div>
+            <button type="submit">Enviar</button>
+        </form>
+
+        <div id="warning-message">
+            <p>Recordar que debe tener las columnas adecuadas.</p>
+            <p>Y NO DEBE CONTENER MÁS DE 999.999 FILAS</p>
+        </div>
+        
+        <div class="status-container">
+            <div id="loading">Cargando<span id="dots">...</span></div>
+            <div id="result"></div>
+        </div>
+    </div>
+    
+    
+
+    <script>
+        // Recuperar el nombre de usuario de localStorage
+        const username = localStorage.getItem('username');
+        if (username) {
+            document.getElementById('greeting').textContent = `Hola, ${username}!`; 
+        } else {
+            document.getElementById('greeting').textContent = 'Hola, visitante!';
+        }
+    </script>
+
+    <script src="../scripts.js"></script>
+</body>
+</html>

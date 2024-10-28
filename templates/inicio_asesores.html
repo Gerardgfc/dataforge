@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Forge</title>
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body class="home-body">
+
+    <!-- Barra de navegación -->
+    <nav class="navbar">
+        <a href="#">Soporte</a>
+        <a href="#">Contactos</a>
+    </nav>
+
+    <div class="logo-title">
+        <img src="../static/logo.png" alt="Logo Shield Bank" class="logo">
+        <h2>Data Forge</h2>
+    </div>
+
+
+    <div class="circle circle-large"></div>
+    <div class="circle circle-purple"></div>
+    <div class="circle circle-blue"></div>
+    <div class="circle circle-pink"></div>
+
+
+    <!-- Contenido principal -->
+    <div class="content">
+        <div class="text-section">
+            <h1>La seguridad que buscas, la confianza que mereces.</h1>
+        </div>
+
+        <div class="login-section">
+            <div class="login-visual">
+                <input type="text" id="username" placeholder="Usuario" onclick="clearPlaceholder(this)" onblur="restorePlaceholder(this, 'Usuario')">
+                <input type="password" id="password" placeholder="Contraseña" onclick="clearPlaceholder(this)" onblur="restorePlaceholder(this, 'Contraseña')">
+                <p>Si olvidó su contraseña contacte con soporte.</p>
+                <button class="login-button" onclick="login()">Iniciar sesión</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../scripts.js"></script>
+</body>
+</html>
