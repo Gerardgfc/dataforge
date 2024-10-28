@@ -33,11 +33,13 @@ header {
 
 .user-info {
     display: flex;
-    align-items: center; /* Alinea los elementos en el centro horizontalmente */
+    align-items: center; 
 }
 
 .text-info {
     margin-right: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 .user-name {
@@ -61,6 +63,7 @@ header {
     margin-top: 5px;
     color: #ff4c4c;
     text-decoration: none;
+    cursor: pointer; 
 }
 
 .logout:hover {
@@ -100,13 +103,16 @@ nav ul li a:hover {
     background-color: #3364d1;
 }
 
-nav ul li a[href="#select"] {
+nav ul li a.select {
     background-color: #3364d1;
 }
 
-nav ul li a[href="#select"]:hover {
+nav ul li a.select:hover {
     background-color: #4472d7;
 }
+
+
+
 
 main {
     flex-grow: 1;

@@ -464,3 +464,30 @@ button {
     margin: 0;
     color: white;
 }
+
+/* Estilos para el botón "Hazte cliente" */
+.new-client-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    font-size: 0.9em;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(45deg, #ff005c, #d400d4);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    text-decoration: none;  /* Elimina la línea subrayada del enlace */
+    white-space: nowrap;  /* Para evitar que el texto se divida en varias líneas */
+    display: inline-block;
+}
+
+.new-client-button:hover {
+    background: linear-gradient(45deg, #d400d4, #ff005c);
+}
+
+
+
+

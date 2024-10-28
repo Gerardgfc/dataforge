@@ -71,7 +71,7 @@ function login()  {
 
     if (username && password) {
         localStorage.setItem('username', username); 
-        window.location.href = 'home_asesores.html'; 
+        window.location.href = 'templates/asesores_home.html'; 
     } else {
         alert("Por favor, introduce tanto el usuario como la contraseña."); 
     }
@@ -84,7 +84,7 @@ function login_bank()  {
 
     if (username && password) {
         localStorage.setItem('username', username); 
-        window.location.href = 'templates/cuenta_clientes.html'; 
+        window.location.href = 'clientes_cuenta.html'; 
     } else {
         alert("Por favor, introduce tanto el usuario como la contraseña."); 
     }
@@ -94,5 +94,11 @@ function login_bank()  {
 
 function logout() {
     localStorage.removeItem('username'); 
-    window.location.href = 'inicio_asesores.html';
+    window.location.href = '../index.html';
 }
+
+function logout_bank() {
+    localStorage.removeItem('username');
+    window.location.href = '../index.html';
+}
+

@@ -3,28 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Forge</title>
+    <title>Shield Bank</title>
     <link rel="stylesheet" href="../styles/style.css">
 </head>
 <body class="home-body">
 
     <!-- Barra de navegación -->
     <nav class="navbar">
-        <a href="#">Soporte</a>
+        <a href="#">Sobre nosotros</a>
+        <a href="#">Servicios</a>
         <a href="#">Contactos</a>
+        
     </nav>
-
-    <div class="logo-title">
-        <img src="../static/logo.png" alt="Logo Shield Bank" class="logo">
-        <h2>Data Forge</h2>
-    </div>
-
-
-    <div class="circle circle-large"></div>
-    <div class="circle circle-purple"></div>
-    <div class="circle circle-blue"></div>
-    <div class="circle circle-pink"></div>
-
+    <a href="URL_DE_TU_PAGINA" class="new-client-button">Hazte cliente</a>
+    
 
     <!-- Contenido principal -->
     <div class="content">
@@ -32,16 +24,25 @@
             <h1>La seguridad que buscas, la confianza que mereces.</h1>
         </div>
 
-        <div class="login-section">
+        <div class="login-sections">
+            <div class="logo-titles">
+                <img src="../static/SBLogo.png" alt="Logo Shield Bank" class="logos" >
+                <h2>Shield Bank</h2>
+            </div>
+
             <div class="login-visual">
                 <input type="text" id="username" placeholder="Usuario" onclick="clearPlaceholder(this)" onblur="restorePlaceholder(this, 'Usuario')">
                 <input type="password" id="password" placeholder="Contraseña" onclick="clearPlaceholder(this)" onblur="restorePlaceholder(this, 'Contraseña')">
-                <p>Si olvidó su contraseña contacte con soporte.</p>
-                <button class="login-button" onclick="login()">Iniciar sesión</button>
+                <a href="#" class="forgot-password">Olvidé mi contraseña</a>
+                <button class="login-button" onclick="login_bank()">Iniciar sesión</button>
             </div>
+            
+        </div>
+
+            
+            
         </div>
     </div>
-
     <script src="../scripts.js"></script>
 </body>
 </html>
