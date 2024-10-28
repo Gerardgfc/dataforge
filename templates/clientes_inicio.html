@@ -4,45 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shield Bank</title>
+    <link rel="icon" href="/static/SBLogo.png" type="image/png">
     <link rel="stylesheet" href="../styles/style.css">
 </head>
 <body class="home-body">
-
     <!-- Barra de navegación -->
     <nav class="navbar">
         <a href="#">Sobre nosotros</a>
         <a href="#">Servicios</a>
         <a href="#">Contactos</a>
-        
     </nav>
-    <a href="URL_DE_TU_PAGINA" class="new-client-button">Hazte cliente</a>
-    
-
+    <a href="#" class="new-client-button">Hazte cliente</a>
     <!-- Contenido principal -->
     <div class="content">
         <div class="text-section">
             <h1>La seguridad que buscas, la confianza que mereces.</h1>
         </div>
-
         <div class="login-sections">
             <div class="logo-titles">
                 <img src="../static/SBLogo.png" alt="Logo Shield Bank" class="logos" >
                 <h2>Shield Bank</h2>
             </div>
-
             <div class="login-visual">
                 <input type="text" id="username" placeholder="Usuario" onclick="clearPlaceholder(this)" onblur="restorePlaceholder(this, 'Usuario')">
                 <input type="password" id="password" placeholder="Contraseña" onclick="clearPlaceholder(this)" onblur="restorePlaceholder(this, 'Contraseña')">
                 <a href="#" class="forgot-password">Olvidé mi contraseña</a>
-                <button class="login-button" onclick="login_bank()">Iniciar sesión</button>
+                <button class="login-button" onclick="loginBank()">Iniciar sesión</button>
             </div>
-            
-        </div>
-
-            
-            
         </div>
     </div>
     <script src="../scripts.js"></script>
+    <script>
+        function loginBank() {
+            const username = document.getElementById('username').value;
+            localStorage.setItem('username', username);
+            window.location.href = 'clientes_cuenta.html'; 
+        }
+
+        function clearPlaceholder(element) {
+            element.placeholder = '';
+        }
+
+        function restorePlaceholder(element, placeholder) {
+            element.placeholder = placeholder;
+        }
+    </script>
 </body>
 </html>

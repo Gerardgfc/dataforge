@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shield Bank</title>
+    <link rel="icon" href="/static/logo.png" type="image/png">
     <link rel="stylesheet" href="../styles/styles.css">
 </head>
 <body>
@@ -16,8 +17,8 @@
             <div class="user-info">
                 <div class="text-info">
                     <p>Bienvenido</p>
-                    <p class="user-name">Carrizo, Gerardo</p>
-                    <a class="logout" onclick="logout_bank()">Cerrar sesión</a>
+                    <p class="user-name"></p>
+                    <a class="logout" onclick="logoutBank()">Cerrar sesión</a>
                 </div>
                 <div class="user-icon">
                     <img src="../static/ico_clie.png" alt="User Icon">
@@ -27,7 +28,7 @@
         <div class="main-content">
             <nav>
                 <ul>
-                    <li><a class=select href="clientes_cuenta.html">Cuenta</a></li>
+                    <li><a class="select" href="clientes_cuenta.html">Cuenta</a></li>
                     <li><a href="#">Tarjetas</a></li>
                     <li><a href="#">Transferencias</a></li>
                     <li><a href="#">Pagos</a></li>
@@ -60,5 +61,18 @@
         </div>
     </div>
     <script src="../scripts.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const username = localStorage.getItem('username');
+            if (username) {
+                document.querySelector('.user-name').textContent = username;
+            }
+        });
+
+        function logoutBank() {
+            localStorage.removeItem('username');
+            window.location.href = 'clientes_inicio.html';
+        }
+    </script>
 </body>
 </html>

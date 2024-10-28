@@ -99,6 +99,6 @@ function logout() {
 
 function logout_bank() {
     localStorage.removeItem('username');
-    window.location.href = '../index.html';
+    window.location.href = 'clientes_inicio.html';
 }
 
