@@ -46,6 +46,11 @@ body {
     width: 100px; 
 }
 
+.logo-title h2{
+    font-size: 2rem;
+    color: white;
+}
+
 
 /* Círculos de fondo */
 .circle {

@@ -31,6 +31,12 @@ header {
     margin-right: 10px;
 }
 
+.logo-title h2{
+    font-size: 2rem;
+    color: white;
+}
+
+
 .user-info {
     display: flex;
     align-items: center; 
