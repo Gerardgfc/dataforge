@@ -31,7 +31,6 @@ document.getElementById('uploadForm').onsubmit = async function(event) {
 
     // Limpiar resultados anteriores
     result.innerHTML = '';
-    
     loadingMessage.style.display = 'block';
 
     let dotCount = 0;
@@ -41,25 +40,23 @@ document.getElementById('uploadForm').onsubmit = async function(event) {
     }, 500);
 
     try {
-        const response = await fetch('/predict', {
+        const response = await fetch('https://ugb-api-tests.onrender.com/predict', { 
             method: 'POST',
             body: formData
         });
-        const data = await response.json();
 
+        const data = await response.blob(); // Cambiado a blob
+        const downloadUrl = window.URL.createObjectURL(data); // Crear URL del blob
+        const downloadLink = `<a href="${downloadUrl}" download="resultado.csv">Descargar resultados</a>`;
+        
         clearInterval(dotAnimation);
         loadingMessage.style.display = 'none';
 
-        if (data.output_file) {
-            const downloadLink = `<a href="/download/${data.output_file}" download>Descargar resultados</a>`;
-            result.innerHTML = downloadLink;
-        } else {
-            result.innerText = data.error;
-        }
+        result.innerHTML = downloadLink; // Mostrar el enlace de descarga
     } catch (error) {
         clearInterval(dotAnimation);
         loadingMessage.style.display = 'none';
-        result.innerText = 'Error en la conexión. Inténtalo de nuevo.';
+        result.innerText = 'Error en la conexión, de parte del servidor. Inténtalo de nuevo.';
         console.error(error);
     }
 };
@@ -77,28 +74,7 @@ function login()  {
     }
 }
 
-
-function login_bank()  {
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value; 
-
-    if (username && password) {
-        localStorage.setItem('username', username); 
-        window.location.href = 'clientes_cuenta.html'; 
-    } else {
-        alert("Por favor, introduce tanto el usuario como la contraseña."); 
-    }
-}
-
-
-
 function logout() {
     localStorage.removeItem('username'); 
     window.location.href = '../index.html';
 }
-
-function logout_bank() {
-    localStorage.removeItem('username');
-    window.location.href = 'clientes_inicio.html';
-}
-
