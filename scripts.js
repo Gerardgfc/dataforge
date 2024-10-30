@@ -40,7 +40,7 @@ document.getElementById('uploadForm').onsubmit = async function(event) {
     }, 500);
 
     try {
-        const response = await fetch('https://ugb-api-tests.onrender.com/predict', { 
+        const response = await fetch('http://ecs-alb-test-1385040551.us-east-1.elb.amazonaws.com/predict', { 
             method: 'POST',
             body: formData
         });
