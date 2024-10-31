@@ -53,12 +53,7 @@ document.getElementById('uploadForm').onsubmit = async function(event) {
         loadingMessage.style.display = 'none';
 
         result.innerHTML = downloadLink; // Mostrar el enlace de descarga
-    } catch (error) {
-        clearInterval(dotAnimation);
-        loadingMessage.style.display = 'none';
-        result.innerText = 'Error en la conexión, de parte del servidor. Inténtalo de nuevo.';
-        console.error(error);
-    }
+    
 };
 
 // Funciones de tu apartado de registro de asesores 
