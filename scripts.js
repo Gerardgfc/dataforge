@@ -40,7 +40,7 @@ document.getElementById('uploadForm').onsubmit = async function(event) {
     }, 500);
 
     try {
-        const response = await fetch('http://ecs-alb-test-1385040551.us-east-1.elb.amazonaws.com/predict', { 
+        const response = await fetch('https://3rol73yole.execute-api.us-east-1.amazonaws.com/dev/predict', { 
             method: 'POST',
             body: formData
         });
