@@ -45,6 +45,10 @@ document.getElementById('uploadForm').onsubmit = async function(event) {
             body: formData
         });
 
+        if (!response.ok) {
+            throw new Error('Error en la respuesta del servidor');
+        }
+
         const data = await response.blob(); // Cambiado a blob
         const downloadUrl = window.URL.createObjectURL(data); // Crear URL del blob
         const downloadLink = `<a href="${downloadUrl}" download="resultado.csv">Descargar resultados</a>`;
@@ -53,7 +57,12 @@ document.getElementById('uploadForm').onsubmit = async function(event) {
         loadingMessage.style.display = 'none';
 
         result.innerHTML = downloadLink; // Mostrar el enlace de descarga
-    
+    } catch (error) {
+        clearInterval(dotAnimation);
+        loadingMessage.style.display = 'none';
+        result.innerText = 'Error en la conexión, de parte del servidor. Inténtalo de nuevo.';
+        console.error(error);
+    }
 };
 
 // Funciones de tu apartado de registro de asesores 
