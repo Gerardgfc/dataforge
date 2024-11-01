@@ -15,7 +15,7 @@
 <body>
     <!-- Barra de navegación -->
     <nav class="navbar">
-        <a href="asesores_estadistica.html">Estadísticas</a>
+        <a href="asesores_home.html">Inicio</a>
         <a href="#">Soporte</a>
         <a href="#">Contactos</a>
         
@@ -42,24 +42,8 @@
     <div class="circle circle-blue"></div>
     <div class="circle circle-pink"></div>
 
-    <div class="body"> 
-        <h1>Subir archivo para predicción de fraude</h1>
-        <form id="uploadForm" enctype="multipart/form-data">
-            <label class="file-label" for="file-input">Seleccionar archivo</label>
-            <input type="file" id="file-input" name="file" required onchange="updateFileName()">
-            <div class="selected-file" id="selected-file">Archivos seleccionados: Ninguno</div>
-            <button type="submit">Enviar</button>
-        </form>
-
-        <div id="warning-message">
-            <p>Recordar que debe tener las columnas adecuadas.</p>
-            <p>Y NO DEBE CONTENER MÁS DE 999.999 FILAS</p>
-        </div>
-        
-        <div class="status-container">
-            <div id="loading">Cargando<span id="dots">...</span></div>
-            <div id="result"></div>
-        </div>
+    <div class="power"> 
+        <iframe title="analisis_dashboard"  src="https://app.powerbi.com/view?r=eyJrIjoiZmVmZTUxOTAtMmFmMS00MWNlLThjYjUtNDY5NTBhZjAzZGZjIiwidCI6Ijc4ZTVhNTJkLTgxYjctNDc3NS05MTE0LTE3ODJiMjY0MTU4MSIsImMiOjR9&pageName=730300c1d097a30d9863" frameborder="0" allowFullScreen="true"></iframe>
     </div>
     
     

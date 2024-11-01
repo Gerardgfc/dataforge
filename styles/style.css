@@ -9,6 +9,11 @@ body {
     background-color: rgb(13, 14, 26);
     position: relative;
     color: white;
+    
+    font-family: "Lato", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+
 }
 
 /* Barra de navegación */
@@ -49,6 +54,7 @@ body {
 .logo-title h2{
     font-size: 2rem;
     color: white;
+    font-family: Arial, sans-serif;
 }
 
 
@@ -491,5 +497,21 @@ button {
 
 .new-client-button:hover {
     background: linear-gradient(45deg, #d400d4, #ff005c);
+}
+
+
+
+.power {
+    margin-top: 5%;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
+}
+
+iframe {
+    width: 650px; 
+    height: 450px; 
+    border: none; 
 }
 

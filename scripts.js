@@ -40,19 +40,31 @@ document.getElementById('uploadForm').onsubmit = async function(event) {
     }, 500);
 
     try {
-        const response = await fetch('https://ugb-api-tests.onrender.com/predict', { 
+        const response = await fetch('https://3rol73yole.execute-api.us-east-1.amazonaws.com/dev/predict', { 
             method: 'POST',
             body: formData
         });
 
-        const data = await response.blob(); // Cambiado a blob
-        const downloadUrl = window.URL.createObjectURL(data); // Crear URL del blob
-        const downloadLink = `<a href="${downloadUrl}" download="resultado.csv">Descargar resultados</a>`;
-        
+        if (!response.ok) {
+            throw new Error('Error en la respuesta del servidor');
+        }
+
+        const data = await response.json(); // Cambiado a json
+        if (data.status === 'success') {
+            // Mostrar el enlace de descarga
+            const downloadLink = `<a href="${data.download_url}" download="${data.filename}">Descargar resultados</a>`;
+            result.innerHTML = downloadLink; // Mostrar el enlace de descarga
+
+            // Redirigir automáticamente después de un breve retraso
+            setTimeout(() => {
+                window.location.href = data.download_url; 
+            }, 2000); // Cambia el tiempo según lo necesites
+        } else {
+            throw new Error('Error en la respuesta de la API');
+        }
+
         clearInterval(dotAnimation);
         loadingMessage.style.display = 'none';
-
-        result.innerHTML = downloadLink; // Mostrar el enlace de descarga
     } catch (error) {
         clearInterval(dotAnimation);
         loadingMessage.style.display = 'none';
