@@ -8,6 +8,6 @@
 Este repositorio contiene el código fuente de un frontend web desarrollado con HTML, CSS y JavaScript. Su principal función es visualizar los datos obtenidos de una API externa, la cual se encuentra desplegada [acá](https://github.com/Gerardgfc/UGB_API).
 
 Demostración
-[video](https://www.youtube.com/watch?v=HhxcTvS7Jlo)
+[https://www.youtube.com/watch?v=HhxcTvS7Jlo]
 
 En este video puedes ver una demostración en vivo de la aplicación en funcionamiento.
