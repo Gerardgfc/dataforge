@@ -9,8 +9,12 @@ Este repositorio contiene el código fuente de un frontend web desarrollado con 
 👉 [UGB_API: Detección de Fraudes Financieros con Machine Learning.](https://github.com/Gerardgfc/UGB_API).
 
 ## Video de presentación 🎥
-<a align="center" href="https://www.youtube.com/watch?v=HhxcTvS7Jlo" target="_blank">
-  <img src="https://github.com/user-attachments/assets/642f8f1b-2311-483b-bc97-d5c73ea362af" alt="Video">
-</a>
+
+<div align="center">
+  <a href="https://www.youtube.com/watch?v=HhxcTvS7Jlo" target="_blank">
+    <img src="https://github.com/user-attachments/assets/642f8f1b-2311-483b-bc97-d5c73ea362af" alt="Video">
+  </a>
+</div>
+
 
 En este video puedes ver una demostración en vivo de la aplicación en funcionamiento.
